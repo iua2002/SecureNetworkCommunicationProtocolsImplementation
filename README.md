@@ -30,45 +30,30 @@ Follow the instructions for your environment from Certbot's official site.
 Usage
 Diffie-Hellman Key Exchange
 Run the server:
+  Copy code
+  python3 diffie_hellman_server.py
 
-bash
-Copy code
-python3 diffie_hellman_server.py
 Run the client:
-
-bash
-Copy code
-python3 diffie_hellman_client.py
-SSL/TLS Web Client and Server
+  python3 diffie_hellman_client.py
+  SSL/TLS Web Client and Server
+  
 Run the server without SSL:
-
-bash
-Copy code
-python3 ssl_web_server.py --address 0.0.0.0 --port 8000
+  python3 ssl_web_server.py --address 0.0.0.0 --port 8000
+  
 Run the server with SSL:
-
-bash
-Copy code
-python3 ssl_web_server.py --address 0.0.0.0 --port 443 --ssl --cert-file <path-to-cert> --key-file <path-to-key>
+  python3 ssl_web_server.py --address 0.0.0.0 --port 443 --ssl --cert-file <path-to-cert> --key-file <path-to-key>
+  
 Run the client without SSL:
-
-bash
-Copy code
-python3 ssl_web_client.py www.example.com --port 80
+  python3 ssl_web_client.py www.example.com --port 80
+  
 Run the client with SSL:
-
-bash
-Copy code
-python3 ssl_web_client.py www.example.com --ssl --port 443
+  python3 ssl_web_client.py www.example.com --ssl --port 443
+  
 Analyzing Network Traffic
 Capture packets on port 8000 without SSL:
-
-bash
-Copy code
-sudo tcpdump -i lo -A port 8000
+  sudo tcpdump -i lo -A port 8000
+  
 Capture packets on port 8000 with SSL:
-
-bash
-Copy code
-sudo tcpdump -i lo -A port 8000
-Observe the number of packets and the differences between SSL and non-SSL transmiss
+  sudo tcpdump -i lo -A port 8000
+  
+Now you can observe the number of packets and the differences between SSL and non-SSL transmissions
